@@ -75,7 +75,24 @@ link_file ".tmux.conf" ".tmux.conf"
 link_file ".config/sway/config" ".config/sway/config"
 link_file ".config/waybar/style.css" ".config/waybar/style.css"
 link_file ".config/nvim/init.lua" ".config/nvim/init.lua"
+# Фрагмент из deploy.sh
+# ...
 
+echo "===== 3. Создание символических ссылок (Symlinks) ====="
+
+# Zsh и Tmux (в корне ~)
+link_file ".zshrc" ".zshrc"
+link_file ".tmux.conf" ".tmux.conf"
+
+# Конфигурации в ~/.config
+link_file ".config/sway/config" ".config/sway/config"
+link_file ".config/waybar/style.css" ".config/waybar/style.css"
+link_file ".config/nvim/init.lua" ".config/nvim/init.lua"
+
+# ДОБАВИТЬ ЭТУ СТРОКУ:
+link_file ".config/foot/foot.ini" ".config/foot/foot.ini" 
+
+# ...
 echo "===== 4. Финальная настройка Neovim ====="
 # Запуск Nvim для установки плагинов (LazyVim)
 nvim --headless "+Lazy sync" +qa
@@ -85,3 +102,4 @@ echo "✅ РАЗВЕРТЫВАНИЕ УСПЕШНО ЗАВЕРШЕНО!"
 echo "Для использования Zsh: exec zsh"
 echo "Для запуска Sway: exec sway"
 echo "=========================================================="
+
